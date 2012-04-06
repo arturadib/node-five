@@ -1,0 +1,11 @@
+{ "name": "Calango"
+, "version": "0.0.1"
+, "author": "Artur Adib"
+, "description": "Low-level HTML5 APIs for Node.js"
+, "homepage": "http://github.com/arturadib/calango"
+, "main": "./lib/calango.js"
+, "dependencies": {
+    "shelljs": "0.0.5pre4",
+    "node-qt": "0.0.1"
+  }
+}

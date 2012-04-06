@@ -7,14 +7,6 @@ _This is a highly experimental, rapidly-changing project. The APIs might change 
 Calango is written in JavaScript on top of [Node-Qt](http://github.com/arturadib/node-qt).
 
 
-#### Available APIs
-
-See below for details.
-
-+ `Canvas`
-+ `AudioContext`
-+ `Image`
-
 
 
 #### Hello world
@@ -39,7 +31,6 @@ For other examples see the [demos/](calango/tree/master/demos) directory.
 
 
 
-
 # Getting started
 
 Since the project is under heavy development, no npm packages are available at the moment. To start, clone the latest development version and install the necessary dependencies:
@@ -53,7 +44,7 @@ $ npm install
 If everything went well you should be able to run the demos, for example:
 
 ```
-$ node demos/00-helloworld
+$ node demos/03-game-goblins
 ```
 
 To run the unit tests:

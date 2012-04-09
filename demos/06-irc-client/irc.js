@@ -1,8 +1,8 @@
 //
 // Globals
 //
-global.calango = require('../..');
-global.window = new calango.Window(1000, 800);
+global.five = require('../..');
+global.window = new five.Window(1000, 800);
 
 var irc = require('irc'),
     inputArea = require('./input'),

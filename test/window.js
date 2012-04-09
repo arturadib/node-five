@@ -28,16 +28,16 @@
 // THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 var assert = require('assert'),
-    calango = require('..');
+    five = require('..');
 
 // Constructor
 {
   // Defaults
-  var window = new calango.Window;
+  var window = new five.Window;
   assert.equal(window.width, 640);
   assert.equal(window.height, 480);
 
-  var window2 = new calango.Window(100, 200);
+  var window2 = new five.Window(100, 200);
   assert.equal(window2.width, 100);
   assert.equal(window2.height, 200);
 
@@ -46,4 +46,4 @@ var assert = require('assert'),
   assert.equal(window.height, 480);
 }
 
-calango.stop();
+five.stop();

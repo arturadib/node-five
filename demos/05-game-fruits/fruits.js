@@ -1,4 +1,4 @@
-/* Adapted to Calango by Artur B Adib */
+/* Adapted to Node-Five by Artur B Adib */
 /* Original source: https://developer.mozilla.org/en-US/demos/detail/fruits */
 
 /*** Fruits! v0.3 ***/
@@ -19,9 +19,9 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-var calango = require('../..');
+var five = require('../..');
 
-var window = new calango.Window(800,600);
+var window = new five.Window(800,600);
 
 //Aliases & Global Vars
 var game;
@@ -56,10 +56,10 @@ function keyControlDown(event)
    var control=true;
    switch(event.key)
    {
-      case calango.Key_Left: keyleft=1; control=false;break;
-      case calango.Key_Up: keyup=1;   control=false;break;
-      case calango.Key_Right: keyright=1;control=false;break;
-      case calango.Key_Down: control=false;
+      case five.Key_Left: keyleft=1; control=false;break;
+      case five.Key_Up: keyup=1;   control=false;break;
+      case five.Key_Right: keyright=1;control=false;break;
+      case five.Key_Down: control=false;
    }
    return control;
 }
@@ -69,10 +69,10 @@ function keyControlUp(event)
    var control=true;
    switch(event.key)
    {
-      case calango.Key_Left: keyleft=0; control=false;break;
-      case calango.Key_Up: keyup=0;   control=false;break;
-      case calango.Key_Right: keyright=0;control=false;break;
-      case calango.Key_Down: control=false;
+      case five.Key_Left: keyleft=0; control=false;break;
+      case five.Key_Up: keyup=0;   control=false;break;
+      case five.Key_Right: keyright=0;control=false;break;
+      case five.Key_Down: control=false;
    }
    return control;
 }
@@ -80,7 +80,7 @@ function keyControlUp(event)
 //Sound Control
 function Sound(id)
 {
-   var context = new calango.AudioContext(),
+   var context = new five.AudioContext(),
        source = context.createBufferSource();
 
    source.buffer = "sounds/"+id+".wav";
@@ -139,7 +139,7 @@ function Game()
    this.init=function()
    {
       //-- graphics
-      var canvas=new calango.Canvas(window);
+      var canvas=new five.Canvas(window);
       canvas.width = window.width;
       canvas.height = window.height;
 
@@ -167,7 +167,7 @@ function Game()
          this.fruits[i]=new Fruit();
 
       //-- load control
-      var load=function(uri){var img=new calango.Image();img.onload=loaded;img.src=uri;return img;}
+      var load=function(uri){var img=new five.Image();img.onload=loaded;img.src=uri;return img;}
       var loaded=function() {game.loaded++;game.checkLoad();}
       
       //-- load resources
@@ -198,7 +198,7 @@ function Game()
    }
    this.loadBWBackground=function()
    {
-      // var auxcanvas=new calango.Canvas;
+      // var auxcanvas=new five.Canvas;
       // auxcanvas.width = 800;
       // auxcanvas.height = 600;
       // var auxcontext=auxcanvas.getContext("2d");
@@ -366,7 +366,7 @@ function Fruit()
    this.v=Math.random()*5+1;    //v in pixels/frame
    this.y=-30;                  //coord y
    this.x=Math.random()*750+25; //coord x
-   this.img=new calango.Image();        //sprite
+   this.img=new five.Image();        //sprite
    this.img.src="sprites/"+this.type+".png";
    this.points=0;
    switch(this.type)
@@ -402,7 +402,7 @@ function Bonus(type)
    this.v=Math.random()*5+1;    //v in pixels/frame
    this.y=-30;                  //coord y
    this.x=Math.random()*750+25; //coord x
-   this.img=new calango.Image();        //sprite
+   this.img=new five.Image();        //sprite
    this.img.src="sprites/b"+this.type+".png";
    this.render=function(context)
    {
@@ -432,7 +432,7 @@ function Player()
    this.sprites=new Array();
    for(var i=1;i<=8;i++)
    {
-     this.sprites[i]=new calango.Image();
+     this.sprites[i]=new five.Image();
 	  this.sprites[i].src="sprites/fox"+i+".png";
    }
    this.render=function(context)
@@ -511,7 +511,7 @@ window.addEventListener('keyup', keyControlUp);
 
 // Play music
 {
-   var context = new calango.AudioContext(),
+   var context = new five.AudioContext(),
        source = context.createBufferSource();
 
    source.buffer = "music.wav";

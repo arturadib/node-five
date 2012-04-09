@@ -1,4 +1,4 @@
-var calango = global.calango,
+var five = global.five,
     window = global.window;
 
 var inputCallback = null,
@@ -18,7 +18,7 @@ const kFontSize = 12,
 // Initialize input area
 //
 
-var canvas = new calango.Canvas(window),
+var canvas = new five.Canvas(window),
     ctx = canvas.getContext('2d');
 
 canvas.width = window.width;
@@ -47,7 +47,7 @@ var x = kInitialX, y = canvas.height/2 + kFontSize/2;
 //
 
 window.addEventListener('keydown', function(e) {
-  if (e.key === calango.Key_Enter || e.key === calango.Key_Return) {
+  if (e.key === five.Key_Enter || e.key === five.Key_Return) {
     clearCursor(x, y);
     x = kInitialX;
     clearInput();
@@ -60,7 +60,7 @@ window.addEventListener('keydown', function(e) {
     return;
   }
 
-  if (e.key === calango.Key_Backspace) {
+  if (e.key === five.Key_Backspace) {
     if (x === kInitialX)
       return;
 

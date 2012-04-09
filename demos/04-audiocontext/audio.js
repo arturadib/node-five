@@ -1,6 +1,6 @@
-var calango = require('../..');
+var five = require('../..');
 
-var context = new calango.AudioContext();
+var context = new five.AudioContext();
 
 var source = context.createBufferSource();
 source.buffer = 'conga1.wav'; // currently non-compliant

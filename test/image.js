@@ -28,19 +28,19 @@
 // THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 var assert = require('assert'),
-    calango = require('..'),
+    five = require('..'),
     test = require('./test');
 
 // Constructor
 {
-  var image = new calango.Image();
+  var image = new five.Image();
   image.src = 'resources/image.png';
   assert.equal(image.complete, true);
 }
 
 // Constructor- bad file
 {
-  var image = new calango.Image();
+  var image = new five.Image();
   image.src = 'BAD-FILE';
   assert.equal(image.complete, false);
 }
@@ -48,7 +48,7 @@ var assert = require('assert'),
 // .onload() : before .src
 {
   var called = false;
-  var image = new calango.Image();
+  var image = new five.Image();
   image.onload = function() { called = true; }
   image.src = 'resources/image.png';
   assert.equal(called, true);
@@ -57,7 +57,7 @@ var assert = require('assert'),
 // .onload() : after .src
 {
   var called = false;
-  var image = new calango.Image();
+  var image = new five.Image();
   image.src = 'resources/image.png';
   image.onload = function() { called = true; }
   assert.equal(called, true);
@@ -66,7 +66,7 @@ var assert = require('assert'),
 // .onload() : bad image before .src
 {
   var called = false;
-  var image = new calango.Image();
+  var image = new five.Image();
   image.onload = function() { called = true; }
   image.src = 'BAD-IMAGE';
   assert.equal(called, false);
@@ -75,10 +75,10 @@ var assert = require('assert'),
 // .onload() : bad image after .src
 {
   var called = false;
-  var image = new calango.Image();
+  var image = new five.Image();
   image.src = 'BAD-IMAGE';
   image.onload = function() { called = true; }
   assert.equal(called, false);
 }
 
-calango.stop();
+five.stop();

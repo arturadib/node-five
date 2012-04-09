@@ -1,7 +1,7 @@
-var calango = require('..');
+var five = require('..');
 
-var window = new calango.Window(640, 480),
-    canvas = new calango.Canvas(window),
+var window = new five.Window(640, 480),
+    canvas = new five.Canvas(window),
     ctx = canvas.getContext('2d');
 
 canvas.width = window.width;

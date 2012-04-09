@@ -28,7 +28,7 @@
 // THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 var assert = require('assert'),
-    calango = require('..'),
+    five = require('..'),
     test = require('./test');
 
 function checkDefaults(ctx) {
@@ -39,7 +39,7 @@ function checkDefaults(ctx) {
 
 // Getters, setters
 {
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   checkDefaults(ctx);
@@ -102,7 +102,7 @@ function checkDefaults(ctx) {
 
 // Regression tests
 {
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   test.regression('context2d-fillRect-black-sq', canvas, function() {
@@ -111,7 +111,7 @@ function checkDefaults(ctx) {
 }
 
 {
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   test.regression('context2d-fillRect-black-sq2', canvas, function() {
@@ -126,7 +126,7 @@ function checkDefaults(ctx) {
 }
 
 {
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   test.regression('context2d-fillRect-red-sq', canvas, function() {
@@ -136,7 +136,7 @@ function checkDefaults(ctx) {
 }
 
 {
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   test.regression('context2d-fillRect-blue-sq', canvas, function() {
@@ -146,7 +146,7 @@ function checkDefaults(ctx) {
 }
 
 {
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   test.regression('context2d-fillText-hello-black', canvas, function() {
@@ -155,7 +155,7 @@ function checkDefaults(ctx) {
 }
 
 {
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   test.regression('context2d-fillText-hello-green', canvas, function() {
@@ -165,7 +165,7 @@ function checkDefaults(ctx) {
 }
 
 {
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   test.regression('context2d-fillText-hello-big-arial', canvas, function() {
@@ -175,7 +175,7 @@ function checkDefaults(ctx) {
 }
 
 {
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   test.regression('context2d-fillText-hello-big-courier', canvas, function() {
@@ -185,7 +185,7 @@ function checkDefaults(ctx) {
 }
 
 { 
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   test.regression('context2d-fillRect-many-rgb-colored', canvas, function() {
@@ -201,7 +201,7 @@ function checkDefaults(ctx) {
 }
 
 { 
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   test.regression('context2d-fillRect-translate-redonblue', canvas, function() {
@@ -219,7 +219,7 @@ function checkDefaults(ctx) {
 }
 
 { 
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   test.regression('context2d-fillRect-scale-redonblue', canvas, function() {
@@ -238,7 +238,7 @@ function checkDefaults(ctx) {
 }
 
 { 
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   test.regression('context2d-fillText-translate-redonblue', canvas, function() {
@@ -256,7 +256,7 @@ function checkDefaults(ctx) {
 }
 
 { 
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   test.regression('context2d-fillText-scale-redonblue', canvas, function() {
@@ -274,7 +274,7 @@ function checkDefaults(ctx) {
 }
 
 { 
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   test.regression('context2d-strokePath-lineTo', canvas, function() {
@@ -287,7 +287,7 @@ function checkDefaults(ctx) {
 }
 
 { 
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   test.regression('context2d-strokePath-lineTo-translate-blueonright', canvas, function() {
@@ -308,11 +308,11 @@ function checkDefaults(ctx) {
 }
 
 { 
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   test.regression('context2d-drawImage', canvas, function() {
-    var image = new calango.Image();
+    var image = new five.Image();
     image.src = 'resources/image.png';
     assert.equal(image.complete, true);
     ctx.drawImage(image, 0, 0);
@@ -320,14 +320,14 @@ function checkDefaults(ctx) {
 }
 
 { 
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   test.regression('context2d-drawImage-translate-imageontop', canvas, function() {
     ctx.fillStyle = 'blue';
     ctx.fillRect(0, 0, 20, 20);
 
-    var image = new calango.Image();
+    var image = new five.Image();
     image.src = 'resources/image.png';
     assert.equal(image.complete, true);
     
@@ -337,11 +337,11 @@ function checkDefaults(ctx) {
 }
 
 { 
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   test.regression('context2d-drawImage-scale-mirror', canvas, function() {
-    var image = new calango.Image();
+    var image = new five.Image();
     image.src = 'resources/image.png';
     assert.equal(image.complete, true);
     
@@ -354,11 +354,11 @@ function checkDefaults(ctx) {
 }
 
 { 
-  var canvas = new calango.Canvas,
+  var canvas = new five.Canvas,
       ctx = canvas.getContext('2d');
 
   test.regression('context2d-drawImage-save-restore-matrix', canvas, function() {
-    var image = new calango.Image();
+    var image = new five.Image();
     image.src = 'resources/image.png';
     assert.equal(image.complete, true);
     
@@ -372,4 +372,4 @@ function checkDefaults(ctx) {
   });
 }
 
-calango.stop();
+five.stop();

@@ -28,13 +28,13 @@
 // THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 var assert = require('assert'),
-    calango = require('..'),
+    five = require('..'),
     test = require('./test');
 
 // Constructor: window
 {
-  var window = new calango.Window(111, 222),
-      canvas = new calango.Canvas(window);
+  var window = new five.Window(111, 222),
+      canvas = new five.Canvas(window);
   
   assert.equal(canvas.width, 300); // spec default
   assert.equal(canvas.height, 150); // spec default
@@ -46,7 +46,7 @@ var assert = require('assert'),
 
 // Constructor- headless
 {
-  var canvas = new calango.Canvas;
+  var canvas = new five.Canvas;
   
   assert.equal(canvas.width, 300); // spec default
   assert.equal(canvas.height, 150); // spec default
@@ -54,15 +54,15 @@ var assert = require('assert'),
 
 // getContext()
 {
-  var canvas = new calango.Canvas;    
+  var canvas = new five.Canvas;    
   assert.ok(canvas.getContext('2d'));
 }
 
 // Regression tests
 {
-  var canvas = new calango.Canvas;
+  var canvas = new five.Canvas;
 
   test.regression('canvas-blank', canvas, function() {});
 }
 
-calango.stop();
+five.stop();

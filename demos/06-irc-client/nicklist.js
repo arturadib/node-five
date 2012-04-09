@@ -1,4 +1,4 @@
-var calango = global.calango,
+var five = global.five,
     window = global.window;
 
 // All units in pixels
@@ -15,7 +15,7 @@ const kFontSize = 12,
 // Initialize nick list area
 //
 
-var canvas = new calango.Canvas(window),
+var canvas = new five.Canvas(window),
     ctx = canvas.getContext('2d');
 
 canvas.width = kWidth;

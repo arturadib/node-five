@@ -5,11 +5,11 @@
 // https://github.com/lostdecade/simple_canvas_game
 
 
-var calango = require('../..');
+var five = require('../..');
 
 // Create the canvas
-var window = new calango.Window(512, 480);
-var canvas = new calango.Canvas(window);
+var window = new five.Window(512, 480);
+var canvas = new five.Canvas(window);
 var ctx = canvas.getContext("2d");
 
 canvas.width = window.width;
@@ -17,7 +17,7 @@ canvas.height = window.height;
 
 // Background image
 var bgReady = false;
-var bgImage = new calango.Image();
+var bgImage = new five.Image();
 bgImage.onload = function () {
   bgReady = true;
 };
@@ -25,7 +25,7 @@ bgImage.src = __dirname + "/resources/background.png";
 
 // Hero image
 var heroReady = false;
-var heroImage = new calango.Image();
+var heroImage = new five.Image();
 heroImage.onload = function () {
   heroReady = true;
 };
@@ -33,7 +33,7 @@ heroImage.src = __dirname + "/resources/hero.png";
 
 // Monster image
 var monsterReady = false;
-var monsterImage = new calango.Image();
+var monsterImage = new five.Image();
 monsterImage.onload = function () {
   monsterReady = true;
 };
@@ -69,16 +69,16 @@ var reset = function () {
 
 // Update game objects
 var update = function (modifier) {
-  if (calango.Key_Up in keysDown) { // up
+  if (five.Key_Up in keysDown) { // up
     hero.y -= hero.speed * modifier;
   }
-  if (calango.Key_Down in keysDown) { // down
+  if (five.Key_Down in keysDown) { // down
     hero.y += hero.speed * modifier;
   }
-  if (calango.Key_Left in keysDown) { // left
+  if (five.Key_Left in keysDown) { // left
     hero.x -= hero.speed * modifier;
   }
-  if (calango.Key_Right in keysDown) { // right
+  if (five.Key_Right in keysDown) { // right
     hero.x += hero.speed * modifier;
   }
 
@@ -130,7 +130,7 @@ var main = function () {
 
 
 function playSound(path) {
-  var context = new calango.AudioContext(),
+  var context = new five.AudioContext(),
       source = context.createBufferSource();
   source.buffer = path; // currently non-compliant
   source.connect(context.destination);

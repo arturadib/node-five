@@ -33,7 +33,7 @@ target.test = function() {
   cd(root);
 
   echo('_________________________________________________________________');
-  echo('Running Calango tests');
+  echo('Running Node-Five tests');
   echo();
 
   cd('test');
@@ -52,7 +52,7 @@ target.ref = function() {
   cd(root);
 
   echo('_________________________________________________________________');
-  echo('Calango tests: Overwriting reference images');
+  echo('Node-Five tests: Overwriting reference images');
   rm('-f', 'img-ref/*');
   mv('img-test/*', 'img-ref');
 }

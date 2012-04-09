@@ -28,11 +28,11 @@
 // THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 var assert = require('assert'),
-    calango = require('..');
+    five = require('..');
 
 // Constructor
 {
-  var context = new calango.AudioContext();
+  var context = new five.AudioContext();
   assert.ok(context);
 
   var source = context.createBufferSource();
@@ -42,4 +42,4 @@ var assert = require('assert'),
   source.connect(context.destination);
 }
 
-calango.stop();
+five.stop();

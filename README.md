@@ -1,10 +1,10 @@
-# Calango
+# Node-Five
 
 _This is a highly experimental, rapidly-changing project. The APIs might change overnight._
 
-**Calango** brings a subset of HTML5 APIs to Node.js. Presently the main focus is on low-level graphics and audio (for example, `Canvas` and `AudioContext`), but other higher-level APIs are welcome. (HTML/CSS layout engine, anyone?)
+**Node-Five** brings a subset of HTML5 APIs to Node.js. Presently the main focus is on low-level graphics and audio (for example, `Canvas` and `AudioContext`), but other higher-level APIs are welcome. (HTML/CSS layout engine, anyone?)
 
-Calango is written in JavaScript on top of [Node-Qt](http://github.com/arturadib/node-qt).
+Node-Five is written in JavaScript on top of [Node-Qt](http://github.com/arturadib/node-qt).
 
 
 
@@ -13,19 +13,19 @@ Calango is written in JavaScript on top of [Node-Qt](http://github.com/arturadib
 
 This example illustrates a minimal use of the HTML5 Canvas API:
 
-![Screenshot](https://github.com/arturadib/calango/raw/master/screenshot.png)
+![Screenshot](https://github.com/arturadib/node-five/raw/master/screenshot.png)
 
 ```javascript
-var calango = require('path-to-calango-dir'),
-    window = new calango.Window(300, 150),
-    canvas = new calango.Canvas(window),
+var five = require('path-to-node-five-dir'),
+    window = new five.Window(300, 150),
+    canvas = new five.Canvas(window),
     ctx = canvas.getContext('2d');
 
 ctx.fillStyle = 'black';
 ctx.fillText('hello node, hello qt', 20, 20);
 ```
 
-For other examples see the [demos/](calango/tree/master/demos) directory.
+For other examples see the [demos/](five/tree/master/demos) directory.
 
 
 
@@ -36,8 +36,8 @@ For other examples see the [demos/](calango/tree/master/demos) directory.
 Since the project is under heavy development, no npm packages are available at the moment. To start, clone the latest development version and install the necessary dependencies:
 
 ```
-$ git clone git://github.com/arturadib/calango.git
-$ cd calango
+$ git clone git://github.com/arturadib/node-five.git
+$ cd node-five
 $ npm install
 ```
 
@@ -73,12 +73,12 @@ $ node make test
 # API reference
 
 
-## calango
+## five
 
 Main object. Typical usage is:
 
 ```
-var calango = require('path-to-calango-dir');
+var five = require('path-to-node-five-dir');
 ```
 
 #### useInterval()
@@ -89,9 +89,9 @@ Add event handler to Node's event loop via `process.nextTick()`.
 This should used in applications that require more instant responsiveness (CPU-intensive!).
 
 #### stop()
-Stop calango's event loop. Applications never exit without a call to this method.
+Stop Node-Five's event loop. Applications never exit without a call to this method.
 
-## calango.Window(width, height)
+## five.Window(width, height)
 
 Native window constructor with the given `height` and `width`.
 
@@ -114,7 +114,7 @@ Removes callback from `event` handler.
 
 + `mousedown`:
 Callback will be passed `{ clientX, clientY, button }`. `button` values correspond
-to the convenience constants `calango.LeftButton`, `calango.RightButton`, etc. 
+to the convenience constants `five.LeftButton`, `five.RightButton`, etc. 
 See http://developer.qt.nokia.com/doc/qt-4.8/qt.html#MouseButton-enum
 for a list of supported button codes
 
@@ -126,14 +126,14 @@ Callback will be passed `{ clientX, clientY }`.
 
 + `keydown`:
 Callback will be passed `{ key, char }`.
-Key values correspond to the convenience constants `calango.Key_Esc`, `calango.Key_Left`, etc.
+Key values correspond to the convenience constants `five.Key_Esc`, `five.Key_Left`, etc.
 See http://developer.qt.nokia.com/doc/qt-4.8/qt.html#Key-enum for the list of supported keys.
 `char` is the corresponding Unicode character, if available.
 
 + `keyup`:
 Callback will be passed `{ key, char }`. Details as in `keydown`.
 
-## calango.Canvas(window)
+## five.Canvas(window)
 
 Class/constructor for Canvas objects, either off-screen (no `window` argument) or inside an existing `window`.
 
@@ -170,7 +170,7 @@ Presently only supports `type == '2d'`.
 
 #### toDataURL()
 
-## calango.Canvas.getContext('2d')
+## five.Canvas.getContext('2d')
 
 The documentation below is for exposed methods after a `ctx = canvas.getContext('2d')` 
 call, which returns a `CanvasRenderingContext2D` object.
@@ -203,9 +203,9 @@ Currently only supports the format above
 #### ctx.stroke()
 
 #### ctx.drawImage(image, x, y)
-Presently only supports images created via `calango.Image()`
+Presently only supports images created via `five.Image()`
 
-## calango.Image()
+## five.Image()
 
 Constructor for image objects. Intended to mirror `Image()` constructor from browsers.
 
@@ -216,7 +216,7 @@ Presently only supports local paths, e.g. `./images/file.png`
 
 #### onload = callback
 
-## calango.AudioContext
+## five.AudioContext
 
 Class/constructor for AudioContext objects.
 
@@ -226,7 +226,7 @@ Currently returns null
 #### createBufferSource()
 Returns a new AudioBufferSourceNode object
 
-## calango.AudioContext.createBufferSource()
+## five.AudioContext.createBufferSource()
 
 The documentation below is for exposed methods after a `source = context.createBufferSource()`
 call, which returns an `AudioBufferSourceNode` object.

@@ -6,6 +6,6 @@
 , "main": "./lib/five.js"
 , "dependencies": {
     "shelljs": "0.0.5pre4",
-    "node-qt": "0.0.1"
+    "node-qt": "0.0.2"
   }
 }

@@ -44,7 +44,7 @@ $ npm install
 If everything went well you should be able to run the demos, for example:
 
 ```
-$ node demos/03-game-goblins
+$ node demos/03-game-goblins/game.js
 ```
 
 To run the unit tests:

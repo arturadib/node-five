@@ -83,7 +83,7 @@ function Sound(id)
    var context = new five.AudioContext(),
        source = context.createBufferSource();
 
-   source.buffer = "sounds/"+id+".wav";
+   source.buffer = __dirname+"/sounds/"+id+".wav";
    source.connect(context.destination);
 
    this.play=function()
@@ -167,7 +167,7 @@ function Game()
          this.fruits[i]=new Fruit();
 
       //-- load control
-      var load=function(uri){var img=new five.Image();img.onload=loaded;img.src=uri;return img;}
+      var load=function(uri){var img=new five.Image();img.onload=loaded;img.src=__dirname+"/"+uri;return img;}
       var loaded=function() {game.loaded++;game.checkLoad();}
       
       //-- load resources
@@ -367,7 +367,7 @@ function Fruit()
    this.y=-30;                  //coord y
    this.x=Math.random()*750+25; //coord x
    this.img=new five.Image();        //sprite
-   this.img.src="sprites/"+this.type+".png";
+   this.img.src=__dirname+"/sprites/"+this.type+".png";
    this.points=0;
    switch(this.type)
    {
@@ -403,7 +403,7 @@ function Bonus(type)
    this.y=-30;                  //coord y
    this.x=Math.random()*750+25; //coord x
    this.img=new five.Image();        //sprite
-   this.img.src="sprites/b"+this.type+".png";
+   this.img.src=__dirname+"/sprites/b"+this.type+".png";
    this.render=function(context)
    {
       context.drawImage(this.img,this.x,this.y);
@@ -433,7 +433,7 @@ function Player()
    for(var i=1;i<=8;i++)
    {
      this.sprites[i]=new five.Image();
-	  this.sprites[i].src="sprites/fox"+i+".png";
+	  this.sprites[i].src=__dirname+"/sprites/fox"+i+".png";
    }
    this.render=function(context)
    {
@@ -514,7 +514,7 @@ window.addEventListener('keyup', keyControlUp);
    var context = new five.AudioContext(),
        source = context.createBufferSource();
 
-   source.buffer = "music.wav";
+   source.buffer = __dirname+"/music.wav";
    source.loop = true;
    source.connect(context.destination);
    source.noteOn(0);

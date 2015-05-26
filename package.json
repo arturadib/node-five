@@ -2,6 +2,7 @@
 , "version": "0.0.1"
 , "author": "Artur Adib"
 , "description": "HTML5 APIs for Node.js"
+, "repository": "arturadib/node-five"
 , "homepage": "http://github.com/arturadib/node-five"
 , "main": "./lib/five.js"
 , "dependencies": {
